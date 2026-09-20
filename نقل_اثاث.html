@@ -12,8 +12,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>شركة إنجاز إكسبريس لنقل العفش والأثاث</title>
-  <meta name="description" content="شركة نقل عفش محترفة بجميع مناطق القاهرة والجيزة. تغليف، فك وتركيب، ونش رفع، عمالة مدربة. اتصل الآن واحصل على عرض خاص." />
+  <title>شركة نقل اثاث في القاهرة والجيزة | إنجاز إكسبريس</title>
+  <meta name="description" content="خدمة نقل اثاث بالقاهرة والجيزة مع تغليف كامل، فك وتركيب، ونش رفع وسيارات نقل مجهزة. خصم حتى 30% وحجز سريع." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
@@ -179,22 +179,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .step{background:#fff;border:1px solid var(--border);border-radius:14px;padding:16px;position:relative}
     .step:before{counter-increment:step;content:counter(step);position:absolute;inset-inline-start:-10px;inset-block-start:-10px;background:var(--brand-red);color:#fff;width:34px;height:34px;display:grid;place-items:center;border-radius:50%;box-shadow:var(--shadow);font-weight:900}
 
-    .cta-sticky{position:fixed;inset-inline:12px;inset-block-end:12px;background:#fff;border:1px solid black;border-radius:999px;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:space-between;padding:10px 12px;gap:12px; z-index: 100;}
-    .cta-sticky strong{font-weight:900}
+    .cta-sticky{position:fixed;inset-inline:12px;inset-block-end:12px;background:linear-gradient(135deg,#fff 0%,#fff7f7 100%);border:2px solid rgba(198,32,32,.22);border-radius:999px;box-shadow:0 16px 40px rgba(198,32,32,.18),0 8px 18px rgba(0,0,0,.12);display:flex;align-items:center;justify-content:space-between;padding:11px 14px;gap:12px;z-index:100;overflow:hidden;animation:stickyLift 3.2s ease-in-out infinite;}
+    .cta-sticky::before{content:"خصم 30%";display:grid;place-items:center;flex:0 0 auto;min-width:78px;height:36px;padding:0 12px;border-radius:999px;background:rgba(198,32,32,.12);color:var(--brand-red);font-size:14px;font-weight:900;animation:heartBeat 1.25s infinite;box-shadow:0 0 0 0 rgba(198,32,32,.32)}
+    .cta-sticky span{font-weight:700}
+    .cta-sticky strong{font-weight:900;color:var(--brand-red)}
+    .cta-sticky .btn{position:relative;white-space:nowrap;animation:heartBeat 1.55s infinite .2s;box-shadow:0 8px 20px rgba(198,32,32,.25)}
+    @keyframes heartBeat{0%,28%,70%,100%{transform:scale(1)}14%,42%{transform:scale(1.09)}}
+    @keyframes stickyLift{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
 
     @media (max-width: 759px) {
       .cta-sticky {
-        padding: 8px;
+        padding: 8px 10px;
         gap: 8px;
       }
+      .cta-sticky::before{min-width:68px;height:30px;padding:0 10px;font-size:12px}
       .cta-sticky span {
         font-size: 13px;
-        line-height: 1.2;
+        line-height: 1.25;
       }
       .cta-sticky .btn {
         padding: .6rem .9rem;
         font-size: 14px;
-        white-space: nowrap; /* Prevent text wrapping */
+        white-space: nowrap;
       }
     }
 
@@ -285,6 +291,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       width: 24px;
       height: 24px;
     }
+  
+    /* Keyword-focused responsive carousel */
+    .keyword-carousel{position:relative;width:100%;max-width:680px;margin-inline:auto;border-radius:20px;overflow:hidden;background:#0f0f0f;box-shadow:0 18px 45px rgba(0,0,0,.16);border:1px solid rgba(198,32,32,.12);aspect-ratio:16/9;touch-action:pan-y}
+    .keyword-carousel__track{display:flex;height:100%;direction:ltr;transition:transform .72s cubic-bezier(.22,.61,.36,1);will-change:transform}
+    .keyword-carousel__slide{min-width:100%;height:100%;position:relative;display:block;overflow:hidden;isolation:isolate;margin:0;background:#111}
+    .keyword-carousel__slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.26));z-index:1;pointer-events:none}
+    .keyword-carousel__slide img{width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:0;transform:scale(1.01)}
+    .keyword-carousel__slide.is-active img{animation:carouselImageIn 4.5s ease both}
+    .keyword-carousel__slide .keyword-carousel__caption{opacity:0;transform:translateY(16px);z-index:2}
+    .keyword-carousel__slide.is-active .keyword-carousel__caption{animation:captionUp .8s ease .1s both}
+    .keyword-carousel__arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.75);background:rgba(0,0,0,.42);color:#fff;font-size:26px;line-height:1;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(5px)}
+    .keyword-carousel__arrow:hover{background:var(--brand-red)}
+    .keyword-carousel__arrow--prev{left:12px}.keyword-carousel__arrow--next{right:12px}
+    .keyword-carousel__dots{position:absolute;z-index:4;left:50%;bottom:12px;transform:translateX(-50%);display:flex;gap:7px;direction:ltr}
+    .keyword-carousel__dot{width:9px;height:9px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.55);cursor:pointer}
+    .keyword-carousel__dot.is-active{width:24px;border-radius:999px;background:#fff}
+    .keyword-carousel__caption{position:absolute;inset-inline:14px;bottom:38px;color:#fff;background:linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.32));padding:8px 12px;border-radius:10px;font-size:13px;font-weight:800;text-align:right;direction:rtl}
+    @keyframes carouselImageIn{0%{transform:scale(1.14);opacity:.75}100%{transform:scale(1);opacity:1}}
+    @keyframes captionUp{0%{opacity:0;transform:translateY(16px)}100%{opacity:1;transform:translateY(0)}}
+    .content-gallery{display:grid;gap:18px;margin-top:26px}
+    @media(min-width:760px){.content-gallery{grid-template-columns:repeat(3,1fr)}}
+    .content-gallery__item{margin:0;position:relative;background:#fff;border:1px solid var(--border);border-radius:18px;padding:10px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;gap:10px;isolation:isolate}
+    .content-gallery__item::before{content:"";position:absolute;inset:0;background-image:var(--item-bg);background-size:cover;background-position:center;filter:blur(22px);transform:scale(1.08);opacity:.28;z-index:0}
+    .content-gallery__item::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.88) 78%,#fff 100%);z-index:0}
+    .content-gallery__item > *{position:relative;z-index:1}
+    .content-gallery__item img{width:100%;height:auto;max-height:620px;aspect-ratio:auto;object-fit:contain;border-radius:13px;display:block}
+    .content-gallery__item figcaption{padding:4px 6px 5px;font-weight:800;line-height:1.55;background:rgba(255,255,255,.96);border-radius:12px}
+    .keyword-intro{max-width:850px;margin:0 auto 24px;text-align:center;color:var(--muted);line-height:1.9}
+    @media(max-width:759px){.keyword-carousel{border-radius:14px;aspect-ratio:4/3}.keyword-carousel__arrow{width:38px;height:38px}.keyword-carousel__caption{font-size:12px;bottom:34px}.content-gallery__item{padding:8px}.section{padding:54px 0}}
+
   </style>
 </head>
 <body>
@@ -318,46 +354,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container hero__grid">
       <!-- Cube-slideshow (left) -->
       <div>
-        <div class="cube-slideshow" aria-label="معرض صور لخدماتنا">
-          <div class="cube-tiles">
-            <style> :root{ --d: 0s; } </style>
-            <div class="tile" style="--d:0s">
-              <img src="images/movers.webp" alt="عمال نقل محترفون"/> <img src="images/truck.webp" alt="شاحنة نقل عفش"/> <img src="images/packing.webp" alt="خدمات تغليف الأثاث"/> <img src="images/winch.webp" alt="ونش رفع الأثاث"/> <img src="images/dishes-packing.webp" alt="تغليف الأطباق والأدوات المطبخية"/> <img src="images/carpenter.webp" alt="نجار لفك وتركيب الأثاث"/>
-            </div>
-            <div class="tile" style="--d:.3s">
-              <img src="images/truck.webp" alt="شاحنة نقل عفش"/> <img src="images/packing.webp" alt="خدمات تغليف الأثاث"/> <img src="images/winch.webp" alt="ونش رفع الأثاث"/> <img src="images/dishes-packing.webp" alt="تغليف الأطباق والأدوات المطبخية"/> <img src="images/carpenter.webp" alt="نجار لفك وتركيب الأثاث"/> <img src="images/movers.webp" alt="عمال نقل محترفون"/>
-            </div>
-            <div class="tile" style="--d:.6s">
-              <img src="images/packing.webp" alt="خدمات تغليف الأثاث"/> <img src="images/winch.webp" alt="ونش رفع الأثاث"/> <img src="images/dishes-packing.webp" alt="تغليف الأطباق والأدوات المطبخية"/> <img src="images/carpenter.webp" alt="نجار لفك وتركيب الأثاث"/> <img src="images/movers.webp" alt="عمال نقل محترفون"/> <img src="images/truck.webp" alt="شاحنة نقل عفش"/>
-            </div>
-            <div class="tile" style="--d:.9s">
-              <img src="images/winch.webp" alt="ونش رفع الأثاث"/> <img src="images/dishes-packing.webp" alt="تغليف الأطباق والأدوات المطبخية"/> <img src="images/carpenter.webp" alt="نجار لفك وتركيب الأثاث"/> <img src="images/movers.webp" alt="عمال نقل محترفون"/> <img src="images/truck.webp" alt="شاحنة نقل عفش"/> <img src="images/packing.webp" alt="خدمات تغليف الأثاث"/>
-            </div>
-            <div class="tile" style="--d:1.2s">
-              <img src="images/dishes-packing.webp" alt="تغليف الأطباق والأدوات المطبخية"/> <img src="images/carpenter.webp" alt="نجار لفك وتركيب الأثاث"/> <img src="images/movers.webp" alt="عمال نقل محترفون"/> <img src="images/truck.webp" alt="شاحنة نقل عفش"/> <img src="images/packing.webp" alt="خدمات تغليف الأثاث"/> <img src="images/winch.webp" alt="ونش رفع الأثاث"/>
-            </div>
-            <div class="tile" style="--d:1.5s">
-              <img src="images/carpenter.webp" alt="نجار لفك وتركيب الأثاث"/> <img src="images/movers.webp" alt="عمال نقل محترفون"/> <img src="images/truck.webp" alt="شاحنة نقل عفش"/> <img src="images/packing.webp" alt="خدمات تغليف الأثاث"/> <img src="images/winch.webp" alt="ونش رفع الأثاث"/> <img src="images/dishes-packing.webp" alt="تغليف الأطباق والأدوات المطبخية"/>
-            </div>
-            <div class="tile" style="--d:1.8s">
-              <img src="images/movers.webp" alt="عمال نقل محترفون"/> <img src="images/truck.webp" alt="شاحنة نقل عفش"/> <img src="images/packing.webp" alt="خدمات تغليف الأثاث"/> <img src="images/winch.webp" alt="ونش رفع الأثاث"/> <img src="images/dishes-packing.webp" alt="تغليف الأطباق والأدوات المطبخية"/> <img src="images/carpenter.webp" alt="نجار لفك وتركيب الأثاث"/>
-            </div>
-            <div class="tile" style="--d:2.1s">
-              <img src="images/truck.webp" alt="شاحنة نقل عفش"/> <img src="images/packing.webp" alt="خدمات تغليف الأثاث"/> <img src="images/winch.webp" alt="ونش رفع الأثاث"/> <img src="images/dishes-packing.webp" alt="تغليف الأطباق والأدوات المطبخية"/> <img src="images/carpenter.webp" alt="نجار لفك وتركيب الأثاث"/> <img src="images/movers.webp" alt="عمال نقل محترفون"/>
-            </div>
-            <div class="tile" style="--d:2.4s">
-              <img src="images/packing.webp" alt="خدمات تغليف الأثاث"/> <img src="images/winch.webp" alt="ونش رفع الأثاث"/> <img src="images/dishes-packing.webp" alt="تغليف الأطباق والأدوات المطبخية"/> <img src="images/carpenter.webp" alt="نجار لفك وتركيب الأثاث"/> <img src="images/movers.webp" alt="عمال نقل محترفون"/> <img src="images/truck.webp" alt="شاحنة نقل عفش"/>
-            </div>
+        <div class="keyword-carousel" data-keyword-carousel aria-roledescription="carousel" aria-label="صور نقل اثاث">
+          <div class="keyword-carousel__track">
+            <figure class="keyword-carousel__slide">
+              <img src="media/نقل_اثاث/نقل_اثاث-slide-1.webp" alt="نقل اثاث بسيارات مجهزة للحفاظ على المنقولات" width="800" height="500" loading="eager" fetchpriority="high">
+              <figcaption class="keyword-carousel__caption">نقل اثاث بسيارات مجهزة للحفاظ على المنقولات</figcaption>
+            </figure>
+            <figure class="keyword-carousel__slide">
+              <img src="media/نقل_اثاث/نقل_اثاث-slide-2.webp" alt="نقل اثاث بفريق مدرب وتغليف احترافي" width="800" height="500" loading="lazy">
+              <figcaption class="keyword-carousel__caption">نقل اثاث بفريق مدرب وتغليف احترافي</figcaption>
+            </figure>
+            <figure class="keyword-carousel__slide">
+              <img src="media/نقل_اثاث/نقل_اثاث-slide-3.webp" alt="نقل اثاث مع حماية الأثاث من الخدش والكسر" width="800" height="500" loading="lazy">
+              <figcaption class="keyword-carousel__caption">نقل اثاث مع حماية الأثاث من الخدش والكسر</figcaption>
+            </figure>
+            <figure class="keyword-carousel__slide">
+              <img src="media/نقل_اثاث/نقل_اثاث-slide-4.webp" alt="نقل اثاث وونش رفع آمن للأدوار العليا" width="800" height="500" loading="lazy">
+              <figcaption class="keyword-carousel__caption">نقل اثاث وونش رفع آمن للأدوار العليا</figcaption>
+            </figure>
+          </div>
+          <button class="keyword-carousel__arrow keyword-carousel__arrow--prev" type="button" aria-label="الصورة السابقة">‹</button>
+          <button class="keyword-carousel__arrow keyword-carousel__arrow--next" type="button" aria-label="الصورة التالية">›</button>
+          <div class="keyword-carousel__dots" aria-label="اختيار صورة">
+            <button class="keyword-carousel__dot is-active" type="button" aria-label="الصورة 1"></button>
+            <button class="keyword-carousel__dot" type="button" aria-label="الصورة 2"></button>
+            <button class="keyword-carousel__dot" type="button" aria-label="الصورة 3"></button>
+            <button class="keyword-carousel__dot" type="button" aria-label="الصورة 4"></button>
           </div>
         </div>
-        <small class="hero__hint">* عرض شرائح مسطّح (بدون 3D) — يتبدّل تلقائيًا مع تأثير بلاطات</small>
       </div>
 
       <!-- Text content (right) -->
       <div>
         <span class="pill">خصم حتى %30 لفترة محدودة</span>
-        <h1>شركة نقل عفش محترفة في القاهرة والجيزة — تغليف، فك وتركيب وونش رفع</h1>
-        <p>نصل إليك أينما كنت، بفريق مدرب ومعدات آمنة لضمان سلامة منقولاتك من الباب للباب. خدمة 24/7 وحجز سريع.</p>
+        <h1>شركة نقل اثاث في القاهرة والجيزة</h1>
+        <p>نقل اثاث منظم وآمن مع تغليف مناسب لكل قطعة، وفك وتركيب احترافي، ووسائل رفع ونقل مجهزة لتقليل مخاطر الخدش أو الكسر.</p>
         <div class="hero__badges"><span class="badge">عمالة مدربة</span><span class="badge">ونش رفع آمن</span><span class="badge">تغليف احترافي</span><span class="badge">ضمان على الخدمة</span></div>
         <!-- Changed to a button to trigger modal -->
         <div class="mt-20"><button class="btn js-call-trigger">احجز معاينة مجانية</button><button class="btn btn--ghost js-call-trigger">اتصل الآن</button></div>
@@ -368,8 +399,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Services Cards -->
   <section id="services" class="section">
     <div class="container">
-      <h2 class="section__title center">خدماتنا</h2>
-      <p class="section__sub center">كل ما تحتاجه لنقل آمن وسريع داخل القاهرة والجيزة</p>
+      <h2 class="section__title center">خدمات نقل اثاث</h2>
+      <p class="section__sub center">كل ما تحتاجه لتنفيذ نقل اثاث بشكل آمن ومنظم من أول التغليف حتى التسليم</p>
       <div class="grid grid--3">
         <article class="card" aria-label="خدمة نقل داخل القاهرة">
           <img src="images/trucks.webp" alt="شاحنات نقل عفش مجهزة" />
@@ -389,6 +420,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p class="card__text">تغليف متعدد الطبقات، نجارون متخصصون، وفني تكييف لضمان جاهزية بيتك سريعًا.</p>
           <button class="btn mt-10 js-call-trigger">اطلب تغليف احترافي</button>
         </article>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section section--alt" id="نقل_اثاث-gallery" aria-labelledby="نقل_اثاث-gallery-title">
+    <div class="container">
+      <h2 class="section__title center" id="نقل_اثاث-gallery-title">صور من خدمات نقل اثاث</h2>
+      <p class="keyword-intro">نركز في خدمة نقل اثاث على التغليف والحماية والتنظيم أثناء التحميل والنقل، مع اختيار وسيلة الرفع والسيارة المناسبة حسب حجم الأثاث والدور ومكان الاستلام.</p>
+      <div class="content-gallery">
+        <figure class="content-gallery__item">
+          <img src="media/نقل_اثاث/نقل_اثاث-post-1.webp" alt="نقل اثاث للمنازل والشقق مع تغليف كامل" width="628" height="628" loading="lazy">
+          <figcaption>نقل اثاث للمنازل والشقق مع تغليف كامل</figcaption>
+        </figure>
+        <figure class="content-gallery__item">
+          <img src="media/نقل_اثاث/نقل_اثاث-post-2.webp" alt="نقل اثاث للمكاتب والشركات بدون تعطيل العمل" width="628" height="628" loading="lazy">
+          <figcaption>نقل اثاث للمكاتب والشركات بدون تعطيل العمل</figcaption>
+        </figure>
+        <figure class="content-gallery__item">
+          <img src="media/نقل_اثاث/نقل_اثاث-post-3.webp" alt="نقل اثاث بعناية لجميع أنواع الأثاث" width="628" height="628" loading="lazy">
+          <figcaption>نقل اثاث بعناية لجميع أنواع الأثاث</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -597,6 +650,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if (e.key === 'Escape') {
         closeModal();
       }
+    });
+
+  
+
+    /* Responsive carousel */
+    document.querySelectorAll('[data-keyword-carousel]').forEach((carousel) => {
+      const track = carousel.querySelector('.keyword-carousel__track');
+      const slides = [...carousel.querySelectorAll('.keyword-carousel__slide')];
+      const dots = [...carousel.querySelectorAll('.keyword-carousel__dot')];
+      const prev = carousel.querySelector('.keyword-carousel__arrow--prev');
+      const next = carousel.querySelector('.keyword-carousel__arrow--next');
+      let current = 0, timer = null, touchStartX = 0;
+
+      const show = (index) => {
+        current = (index + slides.length) % slides.length;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        slides.forEach((slide, i) => slide.classList.toggle('is-active', i === current));
+        dots.forEach((dot,i)=>dot.classList.toggle('is-active', i===current));
+        dots.forEach((dot,i)=>dot.setAttribute('aria-current', i===current ? 'true' : 'false'));
+      };
+      const stop = () => { if(timer) clearInterval(timer); timer = null; };
+      const start = () => { stop(); timer = setInterval(()=>show(current+1), 4500); };
+      prev?.addEventListener('click', ()=>{show(current-1); start();});
+      next?.addEventListener('click', ()=>{show(current+1); start();});
+      dots.forEach((dot,i)=>dot.addEventListener('click', ()=>{show(i); start();}));
+      carousel.addEventListener('mouseenter', stop);
+      carousel.addEventListener('mouseleave', start);
+      carousel.addEventListener('focusin', stop);
+      carousel.addEventListener('focusout', start);
+      carousel.addEventListener('touchstart', e=>{touchStartX=e.changedTouches[0].clientX; stop();},{passive:true});
+      carousel.addEventListener('touchend', e=>{const dx=e.changedTouches[0].clientX-touchStartX;if(Math.abs(dx)>45) show(current + (dx<0?1:-1));start();},{passive:true});
+      show(0); start();
+    });
+
+    /* Show post images completely without cropping, with filled background */
+    document.querySelectorAll('.content-gallery__item').forEach((item) => {
+      const img = item.querySelector('img');
+      if (img) item.style.setProperty('--item-bg', `url("${img.getAttribute('src')}")`);
     });
 
   </script>
